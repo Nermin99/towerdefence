@@ -46,7 +46,7 @@ public class Renderer implements IRenderer {
     @Override
     public void render(TowerDefence td) {
         clearScreen();
-        //TODO td.getTowers().forEach(this::renderTower);
+        td.getTowers().forEach(this::renderTower);
         td.getWaves().forEach(this::renderWave);
     }
 

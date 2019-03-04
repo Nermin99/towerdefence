@@ -92,7 +92,8 @@ public class RightCtrl implements IEventHandler {
     public void onModelEvent(ModelEvent evt) {
         // TODO
         if (evt.getType() == ModelEvent.Type.NEW_TOWER) {
-            String s = (String) evt.getValue();
+
+//            GameLoop.getTowerDefence();
 
         }
     }
