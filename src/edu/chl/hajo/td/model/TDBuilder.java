@@ -78,13 +78,11 @@ public class TDBuilder {
         for (WaveData wd : waveData) {
             AbstractCreep prototype = CreepFactory.getCreep(wd.creepClassName, paths.get(0));
             //TODO Uncomment when your model classes are in place
-            //Wave wave = new Wave(wd.nCreeps, wd.initDelay, wd.spawnPeriod, prototype);
-            //waves.add(wave);
+            Wave wave = new Wave(wd.nCreeps, wd.initDelay, wd.spawnPeriod, prototype);
+            waves.add(wave);
         }
         //TODO Uncomment when your model classes are in place
-        //return new TowerDefence(logicalMap, waves);
-
-        return null;
+        return new TowerDefence(logicalMap, waves);
     }
 
 
