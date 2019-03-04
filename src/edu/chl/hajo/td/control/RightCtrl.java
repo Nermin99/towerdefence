@@ -1,12 +1,15 @@
 package edu.chl.hajo.td.control;
 
 
+import edu.chl.hajo.td.ServiceLocator;
 import edu.chl.hajo.td.event.EventBus;
 import edu.chl.hajo.td.event.IEventHandler;
 import edu.chl.hajo.td.event.ModelEvent;
 import edu.chl.hajo.td.file.LevelData;
 import edu.chl.hajo.td.file.MapData;
 import edu.chl.hajo.td.file.TDReader;
+import edu.chl.hajo.td.model.TDBuilder;
+import edu.chl.hajo.td.model.TowerDefence;
 import edu.chl.hajo.td.model.towers.TowerFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +29,7 @@ import static edu.chl.hajo.td.model.towers.TowerFactory.Type.NONE;
            See right.fxml
  */
 public class RightCtrl implements IEventHandler {
-
+    private TowerDefence td;
 
     @FXML
     private Button start;  // GUI components
@@ -48,8 +51,11 @@ public class RightCtrl implements IEventHandler {
             LevelData levelData = TDReader.readLevel(levels.get(currentLevelIndex));
             MapData mapData = TDReader.readMap(levelData.tileMapFileName);
             // TODO Create model
+            td = TDBuilder.build(levelData, mapData);
             // TODO Create GameLoop
+            gameLoop = new GameLoop(td, ServiceLocator.INSTANCE.getRenderer());
             // TODO Start game loop
+            gameLoop.start();
 
             fixButtons();
         } catch (Exception e) {
