@@ -24,5 +24,6 @@ public class TopCtrl implements IEventHandler {
     @Override
     public void onModelEvent(ModelEvent evt) {
         // TODO set points and damage
+
     }
 }

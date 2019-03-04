@@ -18,7 +18,9 @@ public final class TowerFactory {
     public static AbstractTower getTower(Type type, Point2D pos) {
         switch (type) {
             case BASIC_GUN_TOWER:
-                return null;   // TODO
+                return new BasicGunTower(pos);   // TODO
+            case BASIC_IMPACT_TOWER:
+                return new BasicImpactTower(pos);
             default:
                 throw new IllegalArgumentException("No such tower " + type);
         }

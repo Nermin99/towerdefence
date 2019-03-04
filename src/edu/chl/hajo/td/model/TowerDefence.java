@@ -39,7 +39,7 @@ public class TowerDefence {
     private List<Wave> waves;
 
     @Getter
-    private List<Tower> towers = new ArrayList<>();
+    private List<AbstractTower> towers = new ArrayList<>();
 
     public TowerDefence(TDMap map, List<Wave> waves) {
         this.map = map;
@@ -53,14 +53,18 @@ public class TowerDefence {
 
             w.move();
             w.spawn(now);
-            for (Creep c : w.getCreepList()) {
-                for (Tower t : towers) {
-                    t.shootCreeps(c, now);
-                }
+
+
+            for (AbstractTower t : towers) {
+                t.shootCreeps(w.getCreepList(), now);
             }
+//            for (AbstractTower t : towers) {
+//                for (Creep c : w.getCreepList()) {
+//                    t.shootCreeps(c, now);
+//                }
+//            }
             points += w.getPoints();
             damage += w.getDamage();
-
 
         }
 
@@ -68,7 +72,7 @@ public class TowerDefence {
 
 
     // TODO
-    public void addTower(Tower tower) {
+    public void addTower(AbstractTower tower) {
         if (!getTile(tower.getPos().getX(), tower.getPos().getY()).isOccupied()) {
             getTile(tower.getPos().getX(), tower.getPos().getY()).setOccupied(true);
             towers.add(tower);

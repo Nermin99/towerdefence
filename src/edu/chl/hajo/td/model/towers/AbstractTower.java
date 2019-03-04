@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 import sun.jvmstat.monitor.AbstractMonitor;
 
+import java.util.List;
+
 import static edu.chl.hajo.td.model.TowerDefence.ONE_SEC;
 
 public abstract class AbstractTower {
@@ -43,7 +45,6 @@ public abstract class AbstractTower {
     @Getter
     protected Vector2D dir = INIT_DIR;
 
-    public abstract void shootCreeps(Creep c, long now);
-
+    public abstract void shootCreeps(List<Creep> creepList, long now);
 
 }

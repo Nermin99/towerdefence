@@ -91,6 +91,10 @@ public class RightCtrl implements IEventHandler {
     @Override
     public void onModelEvent(ModelEvent evt) {
         // TODO
+        if (evt.getType() == ModelEvent.Type.NEW_TOWER) {
+            String s = (String) evt.getValue();
+
+        }
     }
 
     // ----------- Fix buttons --------------

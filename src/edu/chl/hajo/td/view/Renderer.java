@@ -103,7 +103,7 @@ public class Renderer implements IRenderer {
     }
 
     // ------------------- Towers ------------------------
-/*
+
     private void renderTower(AbstractTower t) {
         if (t instanceof BasicGunTower) {
             renderBasicGunTower((BasicGunTower) t);
@@ -117,7 +117,8 @@ public class Renderer implements IRenderer {
     }
 
 
-    private void renderImpactTower(AbstractImpactTower t) {
+    // TODO changed AbstractImpactTower to AbstractTower
+    private void renderImpactTower(AbstractTower t) {
         Point2D pos = t.getPos();
         double w = t.getWidth();
         double h = t.getHeight();
@@ -131,7 +132,7 @@ public class Renderer implements IRenderer {
     }
 
     // This assumes symmetrical images
-    private void renderDirected(AbstractGunTower tower) {
+    private void renderDirected(AbstractTower tower) {
         double x = tower.getPos().getX();
         double y = tower.getPos().getY();
         Vector2D dir = tower.getDir();
@@ -143,7 +144,7 @@ public class Renderer implements IRenderer {
         fgCtx.drawImage(img, x - img.getWidth() / 2, y - img.getHeight() / 2);
         fgCtx.restore();
     }
-    */
+
 
     private void drawImage(Image image, Point2D pos, double width, double height) {
         double xTopLeft = pos.getX() - width / 2;

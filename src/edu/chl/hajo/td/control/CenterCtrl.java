@@ -21,10 +21,12 @@ public class CenterCtrl {
         double y = mouseEvent.getY();
         TowerFactory.Type selectedTowerType = RightCtrl.getSelectedTowerType();
         // TODO
+
     }
 
     private void tryPlaceTower(TowerFactory.Type selectedTowerType, double x, double y) {
         // TODO
+
     }
 }
 
