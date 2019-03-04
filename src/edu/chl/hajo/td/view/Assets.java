@@ -4,6 +4,7 @@ import edu.chl.hajo.td.event.ModelEvent;
 //import edu.chl.hajo.td.file.AssetsReader;
 import edu.chl.hajo.td.file.TDReader;
 
+import edu.chl.hajo.td.model.creeps.Creep;
 import edu.chl.hajo.td.util.AnimatedImage;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
@@ -28,7 +29,7 @@ class Assets {
     public Assets() throws IOException {
 
         // TODO Bind creeps to images
-        //bindAnimated(Creep.class, "guardbot1.png", 28, 31, 100_000_000);
+        bindAnimated(Creep.class, "guardbot1.png", 28, 31, 100_000_000);
 
     }
 

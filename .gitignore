@@ -3,6 +3,6 @@
 #.idea/modules.xml
 #.idea/*.iml
 #.idea/**/uiDesigner.xml
-#.idea/**/workspace.xml
+.idea/**/workspace.xml
 
 /out

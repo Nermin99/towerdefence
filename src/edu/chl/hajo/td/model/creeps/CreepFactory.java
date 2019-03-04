@@ -14,7 +14,8 @@ public final class CreepFactory {
     public static AbstractCreep getCreep(String creepClassName, Path path) {
         switch (creepClassName) {
             case "Creep":
-                return null;   // TODO
+
+                return new Creep(path);   // TODO
             default:
                 throw new IllegalArgumentException("No such Creep " + creepClassName);
         }

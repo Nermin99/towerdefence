@@ -47,7 +47,7 @@ public class Renderer implements IRenderer {
     public void render(TowerDefence td) {
         clearScreen();
         //TODO td.getTowers().forEach(this::renderTower);
-        //td.getWaves().forEach(this::renderWave);
+        td.getWaves().forEach(this::renderWave);
     }
 
     // ---------------- Background ----------------------
@@ -69,9 +69,8 @@ public class Renderer implements IRenderer {
     }
 
     //---------------------- Wave ---------------------------------
-    /* TODO
     private void renderWave(Wave wave) {
-        for (AbstractCreep c : wave.getCreeps()) {
+        for (AbstractCreep c : wave.getCreepList()) {
             renderCreep(c);
         }
     }
@@ -104,7 +103,7 @@ public class Renderer implements IRenderer {
     }
 
     // ------------------- Towers ------------------------
-
+/*
     private void renderTower(AbstractTower t) {
         if (t instanceof BasicGunTower) {
             renderBasicGunTower((BasicGunTower) t);
