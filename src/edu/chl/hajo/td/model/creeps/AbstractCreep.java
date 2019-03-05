@@ -74,13 +74,16 @@ public abstract class AbstractCreep extends AbstractMovable implements Cloneable
 //        return (AbstractCreep) super.clone();
 //    }
 
-    public Creep copyOf() {
-        try {
-            return (Creep) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return (Creep) this;
-        }
-    }
+    public abstract AbstractCreep copyOf();
+
+
+//    public Minions copyOf() {
+//        try {
+//            return (Minions) super.clone();
+//        } catch (CloneNotSupportedException e) {
+//            return (Minions) this;
+//        }
+//    }
 
 }
 

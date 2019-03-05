@@ -1,12 +1,12 @@
 package edu.chl.hajo.td.model.towers;
 
 import edu.chl.hajo.td.model.AbstractMovable;
-import edu.chl.hajo.td.model.creeps.Creep;
+import edu.chl.hajo.td.model.creeps.AbstractCreep;
 import edu.chl.hajo.td.util.Point2D;
 import edu.chl.hajo.td.util.Vector2D;
 import lombok.Getter;
 import lombok.Setter;
-import sun.jvmstat.monitor.AbstractMonitor;
+
 
 import java.util.List;
 
@@ -45,6 +45,6 @@ public abstract class AbstractTower {
     @Getter
     protected Vector2D dir = INIT_DIR;
 
-    public abstract void shootCreeps(List<Creep> creepList, long now);
+    public abstract void shootCreeps(List<AbstractCreep> creepList, long now);
 
 }

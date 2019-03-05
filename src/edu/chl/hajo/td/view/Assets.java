@@ -5,8 +5,10 @@ import edu.chl.hajo.td.event.ModelEvent;
 import edu.chl.hajo.td.file.TDReader;
 
 import edu.chl.hajo.td.model.creeps.Creep;
+import edu.chl.hajo.td.model.creeps.Minions;
 import edu.chl.hajo.td.model.towers.AbstractTower;
 import edu.chl.hajo.td.model.towers.BasicGunTower;
+import edu.chl.hajo.td.model.towers.BasicImpactTower;
 import edu.chl.hajo.td.util.AnimatedImage;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
@@ -31,10 +33,13 @@ class Assets {
     public Assets() throws IOException {
 
         // TODO Bind creeps to images
+        bindAnimated(Minions.class, "minion-45x66.png", 45,66, 100_000_000);
         bindAnimated(Creep.class, "guardbot1.png", 28, 31, 100_000_000);
 
-        bind(BasicGunTower.class, "basicguntower.png", 28, 31);
 
+
+        bind(BasicGunTower.class, "basicguntower.png", 28, 31);
+        bind(BasicImpactTower.class, "basicimpacttower.png",32, 32);
     }
 
     // Get image to render (NOTE; Object (key) may be a Class object)
@@ -71,4 +76,5 @@ class Assets {
             objectImage.put(object, ai);
         }
     }
+
 }

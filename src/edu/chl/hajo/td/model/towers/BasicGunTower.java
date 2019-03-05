@@ -2,6 +2,7 @@ package edu.chl.hajo.td.model.towers;
 
 import edu.chl.hajo.td.model.AbstractMovable;
 import edu.chl.hajo.td.model.creeps.Creep;
+import edu.chl.hajo.td.model.creeps.AbstractCreep;
 import edu.chl.hajo.td.util.Point2D;
 import edu.chl.hajo.td.util.Vector2D;
 import lombok.Getter;
@@ -24,8 +25,8 @@ public class BasicGunTower extends AbstractTower {
 
 
     @Override
-    public void shootCreeps(List<Creep> creepList, long now) {
-        for (Creep c : creepList) {
+    public void shootCreeps(List<AbstractCreep> creepList, long now) {
+        for (AbstractCreep c : creepList) {
             lastShot = lastShot == 0 ? now : lastShot;
 
             long delta = now - lastShot;

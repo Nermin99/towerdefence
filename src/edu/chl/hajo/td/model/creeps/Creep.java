@@ -22,5 +22,12 @@ public class Creep extends AbstractCreep {
         super (path);
     }
 
+    public Creep copyOf() {
+        try {
+            return (Creep) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return (Creep) this;
+        }
+    }
 
 }

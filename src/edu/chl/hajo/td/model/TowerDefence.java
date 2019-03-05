@@ -73,6 +73,11 @@ public class TowerDefence {
         if (waves.get(currentWave).getCreepList().size() == 0 && waves.get(currentWave).getNCreeps() == 0) {
             EventBus.INSTANCE.publish(new ModelEvent(ModelEvent.Type.LEVEL_OVER));
         }
+        if (currentWave == waves.size()) {
+            EventBus.INSTANCE.publish(new ModelEvent(ModelEvent.Type.GAME_OVER));
+
+
+        }
     }
 
 

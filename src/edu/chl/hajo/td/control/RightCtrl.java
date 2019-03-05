@@ -15,6 +15,7 @@ import edu.chl.hajo.td.model.towers.TowerFactory;
 import edu.chl.hajo.td.view.Renderer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -47,11 +48,14 @@ public class RightCtrl implements IEventHandler {
         EventBus.INSTANCE.register(this);
     }
 
+
     @FXML
     public void start(MouseEvent mouseEvent) {
         try {
             LevelData levelData = TDReader.readLevel(levels.get(currentLevelIndex));
+
             MapData mapData = TDReader.readMap(levelData.tileMapFileName);
+
             // TODO Create model
             td = TDBuilder.build(levelData, mapData);
             ServiceLocator.INSTANCE.getRenderer().renderBackground(mapData.visualMap);
@@ -97,7 +101,12 @@ public class RightCtrl implements IEventHandler {
         if (evt.getType() == ModelEvent.Type.LEVEL_OVER) {
             td.setCurrentWave(td.getCurrentWave() + 1);
         }
-        currentLevelIndex++;
+
+        if (evt.getType() == ModelEvent.Type.GAME_OVER) {
+            gameLoop.stop();
+            currentLevelIndex++;
+            fixButtons();
+        }
     }
 
     // ----------- Fix buttons --------------

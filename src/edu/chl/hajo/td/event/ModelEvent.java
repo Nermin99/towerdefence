@@ -13,6 +13,7 @@ public class ModelEvent {
         CREEP_FINISHED,
         GUN_TOWER_FIRE,
         NEW_TOWER,
+        GAME_OVER,
         LEVEL_OVER // etc..
     }
 

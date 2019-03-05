@@ -16,7 +16,7 @@ import java.util.List;
  *
  */
 
-public class Wave implements Iterable<Creep> {
+public class Wave implements Iterable<AbstractCreep> {
     private final AbstractCreep prototype;
 
     // TODO
@@ -30,10 +30,10 @@ public class Wave implements Iterable<Creep> {
     private long spawnRate;
 
     @Getter
-    private List<Creep> creepList      = new ArrayList<>();
+    private List<AbstractCreep> creepList      = new ArrayList<>();
 
-    private List<Creep> deadCreeps     = new ArrayList<>();
-    private List<Creep> finishedCreeps = new ArrayList<>();
+    private List<AbstractCreep> deadCreeps     = new ArrayList<>();
+    private List<AbstractCreep> finishedCreeps = new ArrayList<>();
 
 
     public Wave(int nCreeps, long waveDelay, long spawnRate, AbstractCreep creep) {
@@ -44,7 +44,7 @@ public class Wave implements Iterable<Creep> {
     }
 
     public void move() {
-        for (Creep c : creepList) {
+        for (AbstractCreep c : creepList) {
             Point2D nextCheckPoint = c.getNextCheckPoint(c.getCurrentCheckPoint());
             boolean reachedEnd = nextCheckPoint == c.getNextCheckPoint(nextCheckPoint);
 
@@ -59,7 +59,7 @@ public class Wave implements Iterable<Creep> {
         creepList.removeAll(finishedCreeps);
         creepList.removeAll(deadCreeps);
 
-        for (Creep c : creepList) {
+        for (AbstractCreep c : creepList) {
             c.move();
         }
     }
@@ -67,7 +67,7 @@ public class Wave implements Iterable<Creep> {
     public int getPoints() {
         int points = 0;
 
-        for (Creep c : deadCreeps) {
+        for (AbstractCreep c : deadCreeps) {
             points += c.getKillPoints();
         }
 
@@ -78,7 +78,7 @@ public class Wave implements Iterable<Creep> {
     public int getDamage() {
         int damage = 0;
 
-        for (Creep c : finishedCreeps) {
+        for (AbstractCreep c : finishedCreeps) {
             damage += c.getDamage();
         }
 
@@ -100,7 +100,7 @@ public class Wave implements Iterable<Creep> {
     }
 
     @Override
-    public Iterator<Creep> iterator() {
+    public Iterator<AbstractCreep> iterator() {
         return creepList.iterator();
     }
 }
