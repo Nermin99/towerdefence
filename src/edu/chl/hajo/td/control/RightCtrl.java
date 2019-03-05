@@ -39,8 +39,8 @@ public class RightCtrl implements IEventHandler {
     private VBox towerBtns;
 
     // Should come from config file
-    private final List<String> levels = Arrays.asList("level1.json" /*,"level2.json", etc */);
-    private final int currentLevelIndex = 0;
+    private final List<String> levels = Arrays.asList("level1.json" ,"level2.json");
+    private int currentLevelIndex = 0;
     private GameLoop gameLoop;
 
     public void initialize() {
@@ -94,11 +94,10 @@ public class RightCtrl implements IEventHandler {
     @Override
     public void onModelEvent(ModelEvent evt) {
         // TODO
-        if (evt.getType() == ModelEvent.Type.NEW_TOWER) {
-
-//            GameLoop.getTowerDefence();
-
+        if (evt.getType() == ModelEvent.Type.LEVEL_OVER) {
+            td.setCurrentWave(td.getCurrentWave() + 1);
         }
+        currentLevelIndex++;
     }
 
     // ----------- Fix buttons --------------

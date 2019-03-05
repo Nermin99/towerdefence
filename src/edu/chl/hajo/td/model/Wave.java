@@ -24,6 +24,8 @@ public class Wave implements Iterable<Creep> {
 
     @Getter
     private int  nCreeps;
+
+    @Getter
     private long waveDelay;
     private long spawnRate;
 
