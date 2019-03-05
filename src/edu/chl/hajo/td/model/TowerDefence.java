@@ -1,5 +1,7 @@
 package edu.chl.hajo.td.model;
 
+import edu.chl.hajo.td.event.EventBus;
+import edu.chl.hajo.td.event.ModelEvent;
 import edu.chl.hajo.td.model.creeps.Creep;
 import edu.chl.hajo.td.util.Point2D;
 import lombok.Getter;
@@ -58,16 +60,13 @@ public class TowerDefence {
             for (AbstractTower t : towers) {
                 t.shootCreeps(w.getCreepList(), now);
             }
-//            for (AbstractTower t : towers) {
-//                for (Creep c : w.getCreepList()) {
-//                    t.shootCreeps(c, now);
-//                }
-//            }
+
             points += w.getPoints();
             damage += w.getDamage();
-
         }
 
+        EventBus.INSTANCE.publish(new ModelEvent(ModelEvent.Type.CREEP_KILLED, Integer.toString(points)));
+        EventBus.INSTANCE.publish(new ModelEvent(ModelEvent.Type.CREEP_FINISHED, Integer.toString(damage)));
     }
 
 

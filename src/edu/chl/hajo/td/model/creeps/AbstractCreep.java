@@ -29,7 +29,7 @@ public abstract class AbstractCreep extends AbstractMovable implements Cloneable
     @Setter
     protected int hp;  // Current health
     @Getter
-    protected int maxHp = 2;      // Needed for % display in GUI
+    protected int maxHp = 20;      // Needed for % display in GUI
     @Getter
     protected int killPoints = 1;  // Points to player when killed
     @Getter

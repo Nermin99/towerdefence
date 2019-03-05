@@ -26,11 +26,9 @@ public class TopCtrl implements IEventHandler {
         // TODO set points and damage
 
         if (evt.getType() == ModelEvent.Type.CREEP_KILLED) {
-            Label s = (Label) evt.getValue();
-            points = s;
+            points.setText((String) evt.getValue());
         } else if (evt.getType() == ModelEvent.Type.CREEP_FINISHED) {
-            Label s = (Label) evt.getValue();
-            damage = s;
+            damage.setText((String) evt.getValue());
         }
     }
 }

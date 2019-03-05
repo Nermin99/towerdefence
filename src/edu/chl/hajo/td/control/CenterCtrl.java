@@ -22,14 +22,16 @@ public class CenterCtrl {
         double y = mouseEvent.getY();
         TowerFactory.Type selectedTowerType = RightCtrl.getSelectedTowerType();
         // TODO
-        System.out.println(selectedTowerType);
         tryPlaceTower(selectedTowerType, x, y);
     }
 
     private void tryPlaceTower(TowerFactory.Type selectedTowerType, double x, double y) {
         // TODO
-        GameLoop.getTowerDefence().addTower(TowerFactory.getTower(selectedTowerType, new Point2D(x, y)));
-
+        if (selectedTowerType == NONE) {
+            return;
+        } else {
+            GameLoop.getTowerDefence().addTower(TowerFactory.getTower(selectedTowerType, new Point2D(x, y)));
+        }
     }
 }
 

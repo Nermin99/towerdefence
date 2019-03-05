@@ -19,7 +19,7 @@ import static edu.chl.hajo.td.model.TowerDefence.TENTH_SEC;
 public class BasicGunTower extends AbstractTower {
 
     public BasicGunTower(Point2D pos) {
-        super(pos,32,32,80,ONE_SEC/2,1);
+        super(pos,32,32,80,TENTH_SEC,1);
     }
 
 
