@@ -9,5 +9,4 @@ public class BasicImpactTower extends AbstractImpactTower {
         super(pos,32,32,80,TENTH_SEC,1);
     }
 
-
 }

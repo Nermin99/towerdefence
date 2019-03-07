@@ -69,27 +69,18 @@ public abstract class AbstractCreep extends AbstractMovable implements Cloneable
         int idx = this.path.getPoints().indexOf(pos);
 
         if (idx + 1 == this.path.getPoints().size()) {
-            return this.currentCheckPoint; // TODO good stop?
+            return this.currentCheckPoint;
         }
         return this.path.getPoints().get(idx + 1);
     }
 
-//    @Override
-//    public AbstractCreep clone() throws CloneNotSupportedException {
-//        return (AbstractCreep) super.clone();
-//    }
-
-    public abstract AbstractCreep copyOf();
-
-
-//    public Minions copyOf() {
-//        try {
-//            return (Minions) super.clone();
-//        } catch (CloneNotSupportedException e) {
-//            return (Minions) this;
-//        }
-//    }
-
+    public AbstractCreep copyOf() {
+        try {
+            return (AbstractCreep) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return this;
+        }
+    }
 }
 
 

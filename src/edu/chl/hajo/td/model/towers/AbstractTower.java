@@ -13,16 +13,6 @@ import java.util.List;
 import static edu.chl.hajo.td.model.TowerDefence.ONE_SEC;
 
 public abstract class AbstractTower {
-
-    public AbstractTower(Point2D pos, double height, double width, double range, long coolDown, int firePower) {
-        this.pos = pos;
-        this.height = height;
-        this.width = width;
-        this.range = range;
-        this.coolDown = coolDown;
-        this.firePower = firePower;
-    }
-
     @Setter
     @Getter
     protected Point2D pos;    // Center position
@@ -44,6 +34,15 @@ public abstract class AbstractTower {
     protected static final Vector2D INIT_DIR = new Vector2D(-1, 0);
     @Getter
     protected Vector2D dir = INIT_DIR;
+
+    public AbstractTower(Point2D pos, double height, double width, double range, long coolDown, int firePower) {
+        this.pos = pos;
+        this.height = height;
+        this.width = width;
+        this.range = range;
+        this.coolDown = coolDown;
+        this.firePower = firePower;
+    }
 
     public abstract void shootCreeps(List<AbstractCreep> creepList, long now);
 

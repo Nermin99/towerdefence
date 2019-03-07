@@ -55,7 +55,7 @@ public class TowerDefence {
 
     // Update the model
     public void update(long now) {
-        // TODO
+        // TODO DONE
         waves.get(currentWave).move();
         waves.get(currentWave).spawn(now);
 
@@ -80,8 +80,7 @@ public class TowerDefence {
         }
     }
 
-
-    // TODO
+    // TODO DONE
     public void addTower(AbstractTower tower) {
         if (!getTile(tower.getPos().getX(), tower.getPos().getY()).isOccupied()) {
             getTile(tower.getPos().getX(), tower.getPos().getY()).setOccupied(true);
@@ -100,8 +99,4 @@ public class TowerDefence {
     public Point2D getPosForTile(TDTile t) {
         return map.getPosFor(t);
     }
-
-    // TODO
-
-
 }

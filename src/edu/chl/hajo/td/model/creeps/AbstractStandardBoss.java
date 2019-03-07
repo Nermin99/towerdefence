@@ -12,13 +12,4 @@ public abstract class AbstractStandardBoss extends AbstractCreep {
     public AbstractStandardBoss(Path path, double speed, int maxHp, int killPoints, int damage) {
         super(path, speed,maxHp,killPoints,damage);
     }
-
-
-    public Boss copyOf() {
-        try {
-            return (Boss) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return (Boss) this;
-        }
-    }
 }

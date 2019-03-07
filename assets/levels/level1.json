@@ -24,14 +24,14 @@
   "waves": [
     {
       "creepClassName": "Creep",
-      "nCreeps": 10,
+      "nCreeps": 5,
       "initDelay": 1000000,
       "spawnPeriod": 1000000000,
       "pathId": 0
     },
     {
       "creepClassName": "Creep",
-      "nCreeps": 10,
+      "nCreeps": 6,
       "initDelay": 1000000,
       "spawnPeriod": 1000000000,
       "pathId": 0

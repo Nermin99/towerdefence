@@ -5,7 +5,7 @@ import edu.chl.hajo.td.util.Point2D;
 import edu.chl.hajo.td.util.Vector2D;
 
 
-public class Minions extends AbstractStandardMinion {
+public class Minions extends AbstractCreep {
 
     private double speed = 2;
     private int maxHp = 55;
@@ -15,19 +15,11 @@ public class Minions extends AbstractStandardMinion {
 
 
     public Minions(Path path, Point2D startPos, Vector2D startDir) {
-        super(path,startPos, startDir,2,55,2,2);
+        super(startPos, startDir, path,2,55,2,2);
     }
 
     public Minions(Path path) {
         super(path,2,55,2,2);
     }
 
-
-    public Minions copyOf() {
-        try {
-            return (Minions) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return (Minions) this;
-        }
-    }
 }

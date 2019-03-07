@@ -6,10 +6,6 @@ import edu.chl.hajo.td.util.Vector2D;
 
 public class Boss extends AbstractStandardBoss{
 
-
-
-
-
     private double speed = 1;
     private int maxHp = 300;
     private int killPoints = 5;
@@ -24,12 +20,4 @@ public class Boss extends AbstractStandardBoss{
         super(path, 1, 300, 5, 5);
     }
 
-
-    public Boss copyOf() {
-        try {
-            return (Boss) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return (Boss) this;
-        }
-    }
 }

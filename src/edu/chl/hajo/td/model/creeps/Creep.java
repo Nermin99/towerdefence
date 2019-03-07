@@ -12,7 +12,7 @@ import lombok.Setter;
  *     - Will damage you if arriving at path end
  *     - May be killed by some tower placed by you
  */
-public class Creep extends AbstractStandardCreep {
+public class Creep extends AbstractCreep {
 
     private double speed = 2;
     private int maxHp = 37;
@@ -20,19 +20,10 @@ public class Creep extends AbstractStandardCreep {
     private int damage = 1;
 
     public Creep(Path path, Point2D startPos, Vector2D startDir) {
-        super(path,startPos, startDir, 2, 37,1,1);
+        super(startPos, startDir, path, 2, 37,1,1);
     }
 
     public Creep(Path path) {
-        super (path,2,37,1,1);
+        super(path,2,37,1,1);
     }
-
-    public Creep copyOf() {
-        try {
-            return (Creep) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return (Creep) this;
-        }
-    }
-
 }

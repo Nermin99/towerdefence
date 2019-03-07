@@ -105,7 +105,10 @@ public class RightCtrl implements IEventHandler {
         if (evt.getType() == ModelEvent.Type.GAME_OVER) {
             gameLoop.stop();
             currentLevelIndex++;
-            fixButtons();
+
+            if (currentLevelIndex < levels.size()) {
+                fixButtons();
+            }
         }
     }
 
