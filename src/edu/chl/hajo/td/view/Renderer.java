@@ -109,27 +109,40 @@ public class Renderer implements IRenderer {
             renderBasicGunTower((BasicGunTower) t);
         } else if (t instanceof BasicImpactTower) {
             renderImpactTower((BasicImpactTower) t);
+        } else if (t instanceof AdvancedGunTower) {
+            renderAdvancedGunTower((AdvancedGunTower) t);
+        } else if (t instanceof AdvancedImpactTower) {
+            renderAdvancedImpactTower((AdvancedImpactTower) t);
         }
     }
 
     private void renderBasicGunTower(BasicGunTower t) {
         renderDirected(t);
     }
+    private void renderImpactTower(BasicImpactTower t) {
+        renderDirected(t);
+    }
+    private void renderAdvancedGunTower(AdvancedGunTower t) {
+        renderDirected(t);
+    }
+    private void renderAdvancedImpactTower(AdvancedImpactTower t) {
+        renderDirected(t);
+    }
 
 
     // TODO changed AbstractImpactTower to AbstractTower
-    private void renderImpactTower(AbstractTower t) {
-        Point2D pos = t.getPos();
-        double w = t.getWidth();
-        double h = t.getHeight();
-        double xTopLeft = pos.getX() - w / 2;
-        double yTopLeft = pos.getY() - h / 2;
-        fgCtx.setFill(DARKGRAY);
-        fgCtx.fillOval(xTopLeft, yTopLeft, w, h);
-        fgCtx.setStroke(LIGHTYELLOW);
-        fgCtx.strokeOval(xTopLeft, yTopLeft, w, h);
-
-    }
+//    private void renderImpactTower(AbstractTower t) {
+//        Point2D pos = t.getPos();
+//        double w = t.getWidth();
+//        double h = t.getHeight();
+//        double xTopLeft = pos.getX() - w / 2;
+//        double yTopLeft = pos.getY() - h / 2;
+//        fgCtx.setFill(DARKGRAY);
+//        fgCtx.fillOval(xTopLeft, yTopLeft, w, h);
+//        fgCtx.setStroke(LIGHTYELLOW);
+//        fgCtx.strokeOval(xTopLeft, yTopLeft, w, h);
+//
+//    }
 
     // This assumes symmetrical images
     private void renderDirected(AbstractTower tower) {

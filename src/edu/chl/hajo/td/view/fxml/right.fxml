@@ -16,6 +16,8 @@
         <!-- fx:id's from Towers -->
         <Button text="BasicGunTower" maxWidth="Infinity" fx:id="BASIC_GUN_TOWER" onAction="#selectTower"/>
         <Button text="BasicImpactTower" maxWidth="Infinity" fx:id="BASIC_IMPACT_TOWER" onAction="#selectTower"/>
+        <Button text="AdvancedGunTower" maxWidth="Infinity" fx:id="ADVANCED_GUN_TOWER" onAction="#selectTower"/>
+        <Button text="AdvancedImpactTower" maxWidth="Infinity" fx:id="ADVANCED_IMPACT_TOWER" onAction="#selectTower"/>
     </VBox>
 </VBox>
 

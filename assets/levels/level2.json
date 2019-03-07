@@ -14,14 +14,14 @@
   "waves": [
     {
       "creepClassName": "Minions",
-      "nCreeps": 5,
+      "nCreeps": 1,
       "initDelay": 1000000,
       "spawnPeriod": 1000000000,
       "pathId": 0
     },
     {
       "creepClassName": "Minions",
-      "nCreeps": 5,
+      "nCreeps": 1,
       "initDelay": 1000000,
       "spawnPeriod": 1000000000,
       "pathId": 0

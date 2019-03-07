@@ -12,14 +12,19 @@ import lombok.Setter;
  *     - Will damage you if arriving at path end
  *     - May be killed by some tower placed by you
  */
-public class Creep extends AbstractCreep {
+public class Creep extends AbstractStandardCreep {
+
+    private double speed = 2;
+    private int maxHp = 37;
+    private int killPoints = 1;
+    private int damage = 1;
 
     public Creep(Path path, Point2D startPos, Vector2D startDir) {
-        super(startPos, startDir, path);
+        super(path,startPos, startDir, 2, 37,1,1);
     }
 
     public Creep(Path path) {
-        super (path);
+        super (path,2,37,1,1);
     }
 
     public Creep copyOf() {

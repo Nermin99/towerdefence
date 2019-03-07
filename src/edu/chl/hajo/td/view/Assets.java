@@ -4,17 +4,22 @@ import edu.chl.hajo.td.event.ModelEvent;
 //import edu.chl.hajo.td.file.AssetsReader;
 import edu.chl.hajo.td.file.TDReader;
 
+import edu.chl.hajo.td.model.creeps.AbstractStandardCreep;
+import edu.chl.hajo.td.model.creeps.AbstractStandardMinion;
 import edu.chl.hajo.td.model.creeps.Creep;
 import edu.chl.hajo.td.model.creeps.Minions;
-import edu.chl.hajo.td.model.towers.AbstractTower;
-import edu.chl.hajo.td.model.towers.BasicGunTower;
-import edu.chl.hajo.td.model.towers.BasicImpactTower;
+import edu.chl.hajo.td.model.creeps.Boss;
+import edu.chl.hajo.td.model.towers.*;
 import edu.chl.hajo.td.util.AnimatedImage;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -33,13 +38,17 @@ class Assets {
     public Assets() throws IOException {
 
         // TODO Bind creeps to images
+
         bindAnimated(Minions.class, "minion-45x66.png", 45,66, 100_000_000);
-        bindAnimated(Creep.class, "guardbot1.png", 28, 31, 100_000_000);
+       // bindAnimated(Creep.class, "guardbot1.png", 28, 31, 100_000_000);
+        bindAnimated(Creep.class, "FrogCreep240x40.png", 40, 40, 100_000_000);
+        bindAnimated(Boss.class, "Boss.png",60,55, 100_000_000);
 
+        bind(AdvancedGunTower.class, "AdvancedGunTower.png", 44, 44);
+        bind(AdvancedImpactTower.class, "basicimpacttower.png", 44,44);
 
-
-        bind(BasicGunTower.class, "basicguntower.png", 28, 31);
-        bind(BasicImpactTower.class, "basicimpacttower.png",32, 32);
+        bind(BasicGunTower.class, "beastTower.png", 44, 44);
+        bind(BasicImpactTower.class, "BeastTower2.png",44, 44);
     }
 
     // Get image to render (NOTE; Object (key) may be a Class object)
@@ -76,5 +85,4 @@ class Assets {
             objectImage.put(object, ai);
         }
     }
-
 }

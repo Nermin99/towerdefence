@@ -16,7 +16,7 @@ public abstract class AbstractCreep extends AbstractMovable implements Cloneable
 
     @Setter
     @Getter
-    protected double speed = 1;
+    protected double speed;
 
     @Getter
     protected Path path;
@@ -29,21 +29,26 @@ public abstract class AbstractCreep extends AbstractMovable implements Cloneable
     @Setter
     protected int hp;  // Current health
     @Getter
-    protected int maxHp = 20;      // Needed for % display in GUI
+    protected int maxHp;      // Needed for % display in GUI
     @Getter
-    protected int killPoints = 1;  // Points to player when killed
+    protected int killPoints;  // Points to player when killed
     @Getter
-    protected int damage = 1;      // Damage caused when arriving at (non existing) base of player
+    protected int damage;      // Damage caused when arriving at (non existing) base of player
 
-    public AbstractCreep(Point2D startPos, Vector2D startDir, Path path) {
+    public AbstractCreep(Point2D startPos, Vector2D startDir, Path path, double speed, int maxHp, int killPoints, int damage) {
         super(startPos, startDir);
+        this.speed = speed;
         this.path = path;
         this.hp = maxHp;
+        this.maxHp = maxHp;
+        this.killPoints = killPoints;
+        this.damage = damage;
         this.currentCheckPoint = path.getStartPoint();
     }
 
-    public AbstractCreep(Path path) {
-        this(path.getStartPoint(), new Vector2D(path.getStartPoint(), path.get(1)), path);
+    public AbstractCreep(Path path, double speed, int maxHp, int killPoints, int damage) {
+        this(path.getStartPoint(), new Vector2D(path.getStartPoint(), path.get(1)), path, speed, maxHp,killPoints,damage);
+
     }
 
     @Override

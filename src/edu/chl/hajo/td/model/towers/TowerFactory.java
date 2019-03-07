@@ -11,7 +11,9 @@ public final class TowerFactory {
     public enum Type {
         NONE,
         BASIC_GUN_TOWER,
-        BASIC_IMPACT_TOWER  // TODO Possibly rename
+        BASIC_IMPACT_TOWER,// TODO Possibly rename
+        ADVANCED_GUN_TOWER,
+        ADVANCED_IMPACT_TOWER
     }
 
 
@@ -21,6 +23,10 @@ public final class TowerFactory {
                 return new BasicGunTower(pos);   // TODO
             case BASIC_IMPACT_TOWER:
                 return new BasicImpactTower(pos);
+            case ADVANCED_GUN_TOWER:
+                return new AdvancedGunTower(pos);
+            case ADVANCED_IMPACT_TOWER:
+                return new AdvancedImpactTower(pos);
             default:
                 throw new IllegalArgumentException("No such tower " + type);
         }

@@ -17,6 +17,8 @@ public final class CreepFactory {
                 return new Minions(path);
             case "Creep":
                 return new Creep(path);   // TODO
+            case "Boss":
+                return new Boss(path);
             default:
                 throw new IllegalArgumentException("No such Creep " + creepClassName);
         }

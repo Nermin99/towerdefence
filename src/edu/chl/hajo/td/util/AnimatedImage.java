@@ -21,7 +21,7 @@ import static java.lang.Math.round;
 public class AnimatedImage extends AnimationTimer {
 
     private static final Random rand = new Random(); // All objects share same!
-    private static Image[] images;   // All objects share same images!
+    private Image[] images;   // All objects share same images!
     private int frameCounter = 0;    // Each object have!
     private final long delay;        // Time (nanos) between switching image to return
 
